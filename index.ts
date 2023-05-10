@@ -1,8 +1,13 @@
 import products from "./products"
 
-const productName: string = "fanny pack"
+const productName: string = "beanie"
 
 const product = products.find(product => product.name === productName);
+let shipping: number;
+let taxPercent: number;
+let taxTotal: number;
+let total: number;
+let shippingAddress: string;
 
 const orderStatus = (product) =>{
   const preOrder = Boolean(product.preOrder === 'true');
