@@ -1,6 +1,6 @@
 import products from "./products"
 
-const productName: string = "beanie"
+const productName: string = "shirt"
 
 const product = products.find(product => product.name === productName);
 let shipping: number;
@@ -15,8 +15,19 @@ const orderStatus = (product) =>{
   if (preOrder) {
     console.log('We will send you a message when your product is on its way.');
   }
+  
+  let shippingCost;
+  if (product.price > 25) {
+    shipping = 0
+    shippingCost = "We are offering free shipping as your item is over $25"
+  }
+  if(shippingAddress.match("New York")){
+    taxPercent = 0.1
+  }else{
+    taxPercent = 0.05
+  }
+  console.log(shippingCost)
   return preOrder;
 }
 
-console.log(product)
 orderStatus(product)
